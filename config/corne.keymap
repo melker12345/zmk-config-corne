@@ -11,16 +11,16 @@
 
 / {
         behaviors {
-                rgb_bri_up: rgb_bri_up {
-                        compatible = "zmk,behavior-rgb-underglow";
-                        #binding-cells = <1>;
-                        label = "RGB_UG_BRI_UP";
-                };
-                rgb_bri_dn: rgb_bri_dn {
-                        compatible = "zmk,behavior-rgb-underglow";
-                        #binding-cells = <1>;
-                        label = "RGB_UG_BRI_DN";
-                };
+rgb_bri_up: rgb_bri_up {
+    compatible = "zmk,behavior-rgb-underglow";
+    #binding-cells = <2>;
+    label = "RGB_UG_BRI_UP";
+};
+rgb_bri_dn: rgb_bri_dn {
+    compatible = "zmk,behavior-rgb-underglow";
+    #binding-cells = <2>;
+    label = "RGB_UG_BRI_DN";
+};
         };
 
         keymap {
