@@ -10,6 +10,19 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
+        behaviors {
+                rgb_bri_up: rgb_bri_up {
+                        compatible = "zmk,behavior-rgb-underglow";
+                        #binding-cells = <1>;
+                        label = "RGB_UG_BRI_UP";
+                };
+                rgb_bri_dn: rgb_bri_dn {
+                        compatible = "zmk,behavior-rgb-underglow";
+                        #binding-cells = <1>;
+                        label = "RGB_UG_BRI_DN";
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -50,7 +63,7 @@
 // | CTRL |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp  TAB  &rgb_ug RGB_UG_BRI_UP &rgb_ug RGB_UG_BRI_DN &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
+   &kp  TAB  &rgb_bri_up RGB_UG_BRI_UP &rgb_bri_dn RGB_UG_BRI_DN &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
    &kp LSHFT &trans                 &trans                 &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
    &kp LCTRL &trans                 &trans                 &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
                              &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
